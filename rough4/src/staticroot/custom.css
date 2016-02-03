@@ -1,0 +1,37 @@
+body {
+	font-family: Tahoma,Arial,Verdana;
+	font-size: 12px;
+	color: black;
+}
+
+a:link {color: #84c4e2;}
+a:visited {color:#84c4e2;}
+a:hover {color: #cd82ad;}
+a:active {color: #84c4e2;}
+
+
+.btn{
+  background: transparent;
+  color: #F2F2F2;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  /* CSS Transition */
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+.btn{
+  -webkit-border-radius: 0;
+  -moz-border-radius:    0;
+  border-radius:         0;
+}
+a:hover {
+    color: black;
+    text-decoration: none
+  }
+a{
+  color: white;
+}
+
