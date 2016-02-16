@@ -1,0 +1,33 @@
+<body style = "background-color: pink">
+<style>
+  p style="font-size:100px"
+</style>
+
+
+
+
+
+
+<form method = 'POST' action=''>{% csrf_token %}
+     {{ formvar.as_p }}
+<input type='submit' name='button1' value='save'/>
+</form>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1> hello world </h1>
+<h1> {{ variable1 }} </h1>
+<h1> {{ variable2 }} 
+    {{ WOWTHISISAVARIABLE }}
+    </h1>
