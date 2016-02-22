@@ -1,18 +1,51 @@
+
+{% include "css.html" %}
+{% include "javascript.html" %}
+
 <body style = "background-color: pink">
 <style>
   p style="font-size:100px"
 </style>
 
+{% if request.user.is_authenticated %}
+Welcome {{ request.user }}
 
-<form method = 'POST' action = ''>{% csrf_token %}
-    {{ form.as_p }}
-    <input type = 'submit' name = 'button1' value = 'save'/>
+<a href="{% url 'logout' %}?next=/home/">Logout</a>
+
+
+{% else %}
+<form class = 'navbar-form navbar-center' method = 'POST' action = '{% url "login" %}'>{% csrf_token %}
+            <div class= 'form-group'>
+              <input type= 'text' class = 'form-control' name = 'username' placeholder = 'Username' />
+            </div>
+            <div class = 'form-group'>
+              <input type= 'password' class = 'form-control' name = 'password' placeholder = 'Password' />
+            </div>
+
+            <button type= 'submit' class= 'btn btn-default'><i class="fa fa-user"></i> Login</button>
 </form>
+{% endif %}
+
+<form method = 'POST' action=''>{% csrf_token %}
+     {{ formvar.as_p }}
+<input type='submit' name='button1' value='save'/>
+</form>   
 
 
-{{ all_object }} </br>
-{{ first_object}} </br> 
-{{ zero_object_title }} </br> 
 
-<p> EH </p>
-<font size="7"> EH? </font> 
+
+
+
+
+
+
+
+
+
+
+
+<h1> hello world </h1>
+<h1> {{ variable1 }} </h1>
+<h1> {{ variable2 }} 
+    {{ WOWTHISISAVARIABLE }}
+    </h1>

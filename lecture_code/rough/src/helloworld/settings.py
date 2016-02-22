@@ -25,6 +25,9 @@ SECRET_KEY = 'wfjus#329a%34n&_)_7#ypg@uleoummypjn2m^true!7gi2_wj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+ADMIN = (
+    ("John", "cmujcp@gmail.com"),
+    )
 ALLOWED_HOSTS = []
 
 
@@ -37,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'registration',
     'homepage',
 ]
-
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -120,3 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS= (
+    os.path.join(BASE_DIR, "wow_assets"),
+)

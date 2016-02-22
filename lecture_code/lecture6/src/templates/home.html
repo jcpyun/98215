@@ -1,0 +1,53 @@
+{% include "css.html" %}
+{% include "javascript.html" %}
+
+<body style = "background-color: pink">
+<style>
+  p style="font-size:100px"
+</style>
+
+<h1> THIS IS A BUTTON FROM BOOTSTRAP </h1>
+<button type="button" class="btn btn-default" aria-label="Left Align">
+  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+</button>
+
+
+{% if request.user.is_authenticated %}
+<!--THIS IS WHERE THE AUTHENTICATED USERS WILL SEE-->
+<h1> Welcome {{ request.user }} </h1>
+
+<a href="{% url 'logout' %}?next=/home/">Logout</a>
+
+
+
+{% else %}
+<h1> WE ARE NOT LOGGED IN </h1>
+<form method = 'POST' action = '{% url "login" %}'>{% csrf_token %}           
+              <input type= 'text'  name = 'username' placeholder = 'Username' />
+              <input type= 'password' name = 'password' placeholder = 'Password' />
+              <button type= 'submit' >Login</button>
+</form>
+
+<!--WE WILL PUT A LOGIN BUTTON HERE-->
+
+
+{% endif %}
+
+
+
+
+<form method = 'POST' action=''>{% csrf_token %}
+     {{ formvar.as_p }}
+<input type='submit' name='button1' value='save'/>
+</form>   
+
+
+
+
+
+
+<h1> hello world </h1>
+<h1> {{ all_objects }} </h1>
+<h1> {{ zero_object }} 
+    {{ zero_object_context }}
+    </h1>
