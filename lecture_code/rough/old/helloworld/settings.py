@@ -25,6 +25,9 @@ SECRET_KEY = 'wfjus#329a%34n&_)_7#ypg@uleoummypjn2m^true!7gi2_wj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+ADMIN = (
+    ("John", "cmujcp@gmail.com"),
+    )
 ALLOWED_HOSTS = []
 
 
@@ -37,17 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homepage', #### This is my app 
-    ####################### 
-    #### External installed packages #####
     'registration',
+    'homepage',
 ]
-
 LOGIN_URL = '/login/'
-
 LOGIN_REDIRECT_URL = '/'
-
-
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
