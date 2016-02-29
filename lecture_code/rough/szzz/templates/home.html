@@ -1,0 +1,33 @@
+<body style = "background-color: pink">
+<style>
+  p style="font-size:100px"
+</style>
+
+
+{% if request.user.is_authenticated %} 
+<h1> Welcome {{ request.user }} </h1>
+<a href="{% url 'logout' %}?next=/home/">Logout BUTTON</a>
+
+{% else %}
+<h1> Welcome please login </h1>
+<form method = 'POST' action = "{% url 'login' %}">{% csrf_token %}
+    <input type= 'text' name= 'username' placeholder= 'username plis' />
+    <input type= 'password' name= 'password' placeholder= 'password plis' />
+    <button type= 'submit'> Login button</button>
+</form>
+
+{% endif %}
+
+
+
+
+
+<form method = 'POST' action=''>{% csrf_token %}
+     {{ formvar.as_p }}
+<input type='submit' name='button1' value='save'/>
+</form>   
+
+
+
+
+<h1> hello world </h1>
