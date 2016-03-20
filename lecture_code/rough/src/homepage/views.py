@@ -11,44 +11,6 @@ from django.contrib.auth import authenticate,login,logout
 from helloworld import settings
 from django.contrib.auth.models import User #this is for auth model
 ######################################################
-import json
-import urllib
-import time
-import math
-import re
-import os
-
-module_dir = os.path.dirname(__file__)  # get current directory
-symbolslist = os.path.join(module_dir, 'allsymbols.txt')
-
-
-symbolslist= symbolslist.split("\n")
-
-def generateSymbolDaily():
-    counter=0
-
-    for symbol in symbolslist:
-        # myfile= open("dailyPrices/"+symbol+ ".txt","w+")
-        # myfile.close()
-        htmltext= urllib.urlopen("http://www.bloomberg.com/markets/chart/data/1D/"+symbol+":US")
-        try:
-            data = json.load(htmltext)
-            datapoints= data["data_values"]
-        except ValueError:
-            continue
-#           myfile = open("dailyPrices/"+symbol + ".txt", "a")
-
-        for point in datapoints:
-            print point,datapoints
-                #myfile.write(str(symbol+","+str(point[0])+","+str(point[1])+"\n"))
-        #    myfile.close()
-        counter +=1
-
-        print "processed quotes:", counter
-generateSymbolDaily()
-
-
-
 def home(request):
     all_objects= blog.objects.all()
     zero_object= all_objects[0]
